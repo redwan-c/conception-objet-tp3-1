@@ -16,21 +16,32 @@ def test_box_in():
     assert "truc1" in b
     assert "truc2" in b
 
-    def test_box_remove ():
+def test_box_remove ():
     b = Box ()
     b.add("truc1")
     b.remove("truc2")
 
     assert "truc2" not in b
 
-    def test_box_open():
-        b= Box()
-        b.open()
+def test_box_open():
+    b= Box()
+    b.open()
 
-        assert b.is_open()
+    assert b.is_open()
 
-    def test_box_close():
-        b= Box()
-        b.close()
+def test_box_close():
+    b= Box()
+    b.close()
 
-        assert not b.is_open()
+    assert not b.is_open()
+
+def test_box_look():
+    b = Box ()
+    b.add("ceci")
+    b.add("cela")
+
+    b.open()
+    assert b.action_look()=="la boite contient ceci, cela"
+
+    b.close()
+    assert b.action_look()=="la boite est fermée"
