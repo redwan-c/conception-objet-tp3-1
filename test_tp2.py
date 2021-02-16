@@ -47,5 +47,5 @@ def test_box_look():
     assert b.action_look()=="la boite est fermée"
 
 def test_things_create():
-    t=Thing(3)
+    t = Thing(3)
     assert t.volume==3
