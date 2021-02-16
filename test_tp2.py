@@ -1,15 +1,15 @@
 from tp2 import *
 
 def test_box_create():
-    b = Box ()
+    b = Box()
 
 def test_box_add():
-    b = Box ()
+    b = Box()
     b.add("truc1")
     b.add("truc2")
 
 def test_box_in():
-    b = Box ()
+    b = Box()
     b.add("truc1")
     b.add("truc2")
 
@@ -17,7 +17,7 @@ def test_box_in():
     assert "truc2" in b
 
 def test_box_remove ():
-    b = Box ()
+    b = Box()
     b.add("truc1")
     b.remove("truc2")
 
@@ -46,6 +46,14 @@ def test_box_look():
     b.close()
     assert b.action_look()=="la boite est fermée"
 
-def test_things_create():
+def test_thing_create():
     t = Thing(3)
     assert t.volume==3
+
+def test_box_capacity():
+    b= Box()
+
+    assert b.capacity() is None
+
+    b.set_capacity(5)
+    assert b.capacity()==5
