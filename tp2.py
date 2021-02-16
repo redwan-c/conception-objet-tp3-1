@@ -30,3 +30,4 @@ class Box:
 class Thing:
     def __init__(self,v):
         self.volume=v
+        
