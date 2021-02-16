@@ -57,3 +57,15 @@ def test_box_capacity():
 
     b.set_capacity(5)
     assert b.capacity()==5
+
+def test_has_room_for():
+    b = Box()
+    t = Thing(3)
+
+    assert b.has_room_for(t)
+
+    b.set_capacity(3)
+    assert b.has_room_for(t)
+
+    b.set_capacity(0)
+    assert b.has_room_for(t)
